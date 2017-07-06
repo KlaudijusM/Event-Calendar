@@ -1,0 +1,295 @@
+:root {
+  --eventCalendarButtonColor: #1565C0;
+  --eventCalendarButtonHoverColor: #2196F3;
+  --eventCalendarButtonTextColor: #F5F5F5;
+
+  --eventCalendarHeaderColor: #1565C0;
+  --eventCalendarHeaderTextColor: #FFFFFF;
+
+  --eventCalendarDayNamesColor: #DDDDDD;
+  --eventCalendarDayNamesTextColor: #252525;
+
+  --eventCalendarMonthDaysColor: #eee;
+  --eventCalendarMonthDaysTextColor: #000000;
+
+  --eventCalendarTodayColor: #1565C0;
+  --eventCalendarTodayTextColor: #FFF;
+
+  --eventCalendarEventDayColor: #f44336;
+
+  --eventCalendarNotificationColor: rgba(0, 0, 0, 0.7);
+  --eventCalendarNotificationTextColor: #FFFFFF;
+
+  --eventCalendarNotificationButtonColor: #2196F3;
+  --eventCalendarNotificationButtonTextColor: #FFFFFF;
+}
+
+#calendarContainer{
+  width: 80%;
+  height: auto;
+
+  position: static;
+  display: block;
+
+  padding: 0;
+  margin: 0 auto;
+
+  font-family: "Arial", Helvetica, sans-serif;
+  font-size: 80%;
+}
+
+#calendarExpandButton {
+  width: 100%;
+  height: 100px;
+
+  position: static;
+  display: block;
+
+  padding: 1%;
+  margin: 0 auto;
+  margin-top: 2%;
+
+  text-align: center;
+
+  background-color: var(--eventCalendarButtonColor);
+  color: var(--eventCalendarButtonTextColor);
+  font-size: 300%;
+  text-decoration: none;
+
+  user-select: none;
+  cursor: pointer;
+
+  border:none;
+  border-radius: 5px 5px;
+
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+
+  transition-duration: .25s;
+}
+
+#calendarExpandButton:hover {
+  background-color: var(--eventCalendarButtonHoverColor);
+}
+
+#calendarExpandButton:focus {outline:0;}
+
+#calendar {
+  width: 100%;
+  height: 100%;
+
+  position: static;
+  display: none;
+
+  margin: 0 auto;
+  margin-bottom: 2%;
+  padding: 0;
+
+  font-weight: 300;
+  text-align: center;
+
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+#calendarHeader{
+  position: static;
+  display: block;
+
+  height: 100px;
+  width: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  background-color: var(--eventCalendarHeaderColor);
+  color: var(--eventCalendarHeaderTextColor);
+}
+
+#calendarPrevArrow, #calendarText, #calendarNextArrow {
+  position: relative;
+  display: inline-block;
+
+  padding: 0;
+  margin: 0;
+  margin-top: 2%;
+  margin-bottom: 2%;
+
+  height: 50%;
+
+  font-size: 300%;
+}
+
+#calendarMonthText, #calendarYearText {
+  display: block;
+
+  margin: 0;
+  padding: 0;
+
+  width: auto;
+  height: auto;
+
+  font-size: 100%;
+}
+
+#calendarYearText {
+  font-size: 60%;
+}
+
+#calendarPrevArrow, #calendarNextArrow {
+  font-size: 300%;
+  cursor: pointer;
+  margin-top: 3%;
+  user-select: none;
+}
+
+#calendarPrevArrow {
+  float: left;
+  margin-left: 2%;
+}
+
+#calendarNextArrow {
+  float: right;
+  margin-right: 2%;
+}
+
+#calendarMain {
+  width: 100%;
+  height: 80%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+#calendarWeekDays {
+  width: 100%;
+  height: 50px;
+
+  background-color: var(--eventCalendarDayNamesColor);
+  color: var(--eventCalendarDayNamesTextColor);
+
+  text-decoration: none;
+
+  position: static;
+  display: block;
+
+  margin: 0;
+  padding: 0;
+
+  font-size: 200%;
+}
+
+#calendarWeekDays li {
+  display: inline-block;
+
+  width: calc(100%/7);
+  height: 100%;
+
+
+  text-align: center;
+
+  margin: 0;
+  padding: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#calendarDays {
+  background: var(--eventCalendarMonthDaysColor);
+  color: var(--eventCalendarMonthDaysTextColor);
+
+  margin: 0;
+  padding: 0;
+
+  width: 100%;
+  height: 90%;
+
+  font-size: 200%;
+}
+
+#calendarDays li {
+  display: inline-block;
+
+  width: calc(100%/7);
+
+  text-align: center;
+
+  border-bottom: 5px solid var(--eventCalendarMonthDaysColor);
+
+  padding: 0;
+  margin: 0;
+  padding-top: calc(100%/20);
+  padding-bottom: calc(100%/20);
+}
+
+#calendar-today {
+  background-color: var(--eventCalendarTodayColor);
+  color: var(--eventCalendarTodayTextColor) !important;
+}
+
+.calendar-deadline-date {
+  border-bottom: 5px solid var(--eventCalendarEventDayColor) !important;
+  cursor: pointer;
+}
+
+#calendarNotification {
+  position: fixed;
+  display: none;
+  z-index: 9999;
+
+  font-size: 300%;
+  text-align: left;
+
+  width: 600px;
+  height: auto;
+
+  left: calc((100%/2) - 300px - 1%);
+  right: calc((100%/2) - 300px - 1%);
+  top: 20%;
+
+  padding: 1%;
+  margin: 0;
+
+  background-color: var(--eventCalendarNotificationColor);
+  color: var(--eventCalendarNotificationTextColor);
+
+  font-family: "Arial", Helvetica, sans-serif;
+
+  border-radius: 5px 5px;
+}
+
+#calendarNotificationText {
+  position: static;
+  display: block;
+
+  width: auto;
+  height: auto;
+
+  margin: 0;
+  padding: 0;
+  margin-top: 5%;
+
+  text-align: center;
+}
+
+#calendarNotificationButton {
+  position: static;
+  display: block;
+
+  width: 60%;
+  height: 20%;
+
+  font-size: 100%;
+  text-align: center;
+
+  margin: 0 auto;
+  padding: 1%;
+  margin-top: 4%;
+
+  cursor: pointer;
+
+  background-color: var(--eventCalendarNotificationButtonColor);
+  color: var(--eventCalendarNotificationButtonTextColor);
+
+  box-shadow: 0 5px 10px rgba(255, 255,255, 0.1);
+  border-radius: 5px 5px;
+}
