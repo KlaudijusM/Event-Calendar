@@ -1,7 +1,7 @@
 # Event-Calendar - simple to incorporate web calendar with event display.
 
 
-### [Preview](klaudijusm.github.io/Event-Calendar/index.html)
+### [Preview](https://klaudijusm.github.io/Event-Calendar/index.html)
 
 
 ## What is it?
